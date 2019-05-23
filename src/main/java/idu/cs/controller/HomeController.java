@@ -27,7 +27,7 @@ public class HomeController {
 	@GetMapping("/register")
 	public String regform() {
 		return "user-form";
-	}
+	} 
 	
 	@PostMapping("/users")
 	public String createUser(@Valid User user, Model model) {
