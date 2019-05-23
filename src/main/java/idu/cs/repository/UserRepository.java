@@ -1,8 +1,8 @@
-package iducs.springboot.board.repository;
+package idu.cs.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iducs.springboot.board.domain.User;
+import idu.cs.domain.User;
 
 public interface UserRepository 
 	extends JpaRepository<User, Long> {

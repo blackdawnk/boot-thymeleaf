@@ -1,4 +1,4 @@
-package iducs.springboot.board.domain;
+package idu.cs.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package iducs.springboot.board.exception;
+package idu.cs.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

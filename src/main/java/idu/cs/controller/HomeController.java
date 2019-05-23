@@ -1,4 +1,4 @@
-package iducs.springboot.board.controller;
+package idu.cs.controller;
 
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import iducs.springboot.board.domain.User;
-import iducs.springboot.board.exception.ResourceNotFoundException;
-import iducs.springboot.board.repository.UserRepository;
+import idu.cs.domain.User;
+import idu.cs.exception.ResourceNotFoundException;
+import idu.cs.repository.UserRepository;
 
 @Controller
 public class HomeController {
@@ -30,7 +30,7 @@ public class HomeController {
 	}
 	
 	@PostMapping("/users")
-	public String createUser(@Valid @RequestBody User user, Model model) {
+	public String createUser(@Valid User user, Model model) {
 		userRepo.save(user);
 		model.addAttribute("user", user);
 		return "redirect:/users";
