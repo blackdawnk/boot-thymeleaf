@@ -1,4 +1,4 @@
-package idu.cs.domain;
+package idu.cs.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import idu.cs.domain.User;
 
 @Entity
 @Table(name = "user")
@@ -52,6 +54,28 @@ public class UserEntity {
 		this.company = company;
 	}
 	
+	@Override
+	public String toString() {
+		return "UserEntity [id=" + id + ", userId=" + userId + ", userPw=" + userPw + ", name=" + name + ", company="
+				+ company + "]";
+	}
 	
+	public User buildDomain() { // Entity -> Domain(==User)
+		User user = new User();
+		user.setId(id);
+		user.setUserId(userId);
+		user.setUserPw(userPw);
+		user.setName(name);
+		user.setCompany(company);
+		return user;
+	}
+	
+	public void buildEntity(User user) { // Domain(==User) -> Entity
+		id = user.getId();
+		userId = user.getUserId();
+		userPw = user.getUserPw();
+		name = user.getName();
+		company = user.getCompany();
+	}
 	
 }
